@@ -55,13 +55,8 @@ WHITE:
 }
 
 
-.selectMovType{
-  grid-column: 3;
-}
-
-
-.selectCurrency{
-  grid-column: 7;
+.filterRowText{
+  font-size: 2rem;
 }
 
 .none{

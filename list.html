@@ -12,16 +12,16 @@
 <body>
   <div class="listBody">
     <div class="mainRow">
-      <div class="type">Nazwa Konta</div>
       <div class="type">Data</div>
+      <div class="type">Nazwa Konta</div>
       <div class="type">Typ</div>
       <div class="type">Intrument</div>
+      <div class="type">Waluta</div>
       <div class="type">Liczba</div>
       <div class="type">Cena</div>
-      <div class="type">Waluta</div>
     </div>
     <div class="filterRow">
-      <!-- <div>Filtruj</div> -->
+      <div class="filterRowText">Filtruj:</div>
       <select class="selectAcc form-select" onchange="filter('selectAcc', 'acc')">
         <option value="all">Wszystkie Konta</option>
         <option value="acc1">Konto 1</option>
@@ -32,11 +32,11 @@
       </select>
       <select class="selectMovType form-select"  onchange="filter('selectMovType', 'mov')">
         <option value="all">Sprzedaż / Zakup</option>
-        <option value="buy">Sprzedaż</option>
-        <option value="sell">Zakup</option>
+        <option value="sell">Sprzedaż</option>
+        <option value="buy">Zakup</option>
       </select>
-      <select class="selectType form-select"  onchange="filter('selectType', 'type')">
-        <option value="all">Wszystkie</option>
+      <select class="selectType form-select"  onchange="filter('selectType', 'kind')">
+        <option value="all">Wszystkie Instrumenty</option>
         <option value="stock">Akcje</option>
         <option value="bond">Obligacje</option>
         <option value="commodity">towar</option>

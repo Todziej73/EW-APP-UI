@@ -10,14 +10,14 @@ const selectElArr = document.querySelectorAll('.filterRow select');
 
 const addTransaction = function (htmlType, htmlAcc, htmlMovType, htmlCurrency, accName, date, typeOfMov, type, count, price, currency) {
   const html = `
-  <div class="listEl type--${htmlType} acc--${htmlAcc} mov--${htmlMovType} currency--${htmlCurrency}">
+  <div class="listEl kind--${htmlType} acc--${htmlAcc} mov--${htmlMovType} currency--${htmlCurrency}">
+      <div class="data">${date}</div>
         <div class="data">${accName}</div>
-        <div class="data">${date}</div>
         <div class="data">${typeOfMov}</div>
         <div class="data">${type}</div>
+        <div class="data">${currency}</div>
         <div class="data">${count}</div>
         <div class="data">${price}</div>
-        <div class="data">${currency}</div>
       </div>
     </div>
   `;
@@ -43,28 +43,56 @@ const addAllTransactions = function () {
   addTransaction('bond', 'acc5', 'buy', 'eur', 'konto5', '12-01-2023', 'zakup', 'obligacja', '500', '50000', 'EUR');
   addTransaction('realEstate', 'acc1', 'buy', 'usd', 'konto1', '18-06-2023', 'zakup', 'biuro', '1', '1000000', 'USD');
 }
+
+
 addAllTransactions();
-const listHtmlEl = document.querySelectorAll('.listEl')
+let transactions = [];
 
-
-const enableElements = function (array) {
-  for (const el of array) {
-    el.classList.remove('none');
+let filters = {
+  acc: '',
+  mov: '',
+  kind: '',
+  currency: '',
+  
+  clear: function(){
+    this.acc = '';
+    this.mov = '';
+    this.kind = '';
+    this.currency = '';
   }
 }
 
-const filter = function (selectEl, type) {
-  enableElements(listHtmlEl);
 
+
+for(const el of document.querySelectorAll('.listEl')){
+  transactions.push(el);
+}
+
+
+
+
+const filter = function (selectEl, type) {
   const currentValue = document.querySelector(`.${selectEl}`).value;
-  console.log(currentValue);
-  if (currentValue === 'all') {
-    enableElements(listHtmlEl);
-  } else {
-    const notMatchArr = document.querySelectorAll(`.listEl:not(.${type}--${currentValue})`);
-    for (const el of notMatchArr) {
-      el.classList.add('none');
-    }
-  }
+  filters[type] = currentValue == 'all' ? '' : currentValue;
+  console.log(filters);
+
+  refreshList();
+}
+
+
+function refreshList() {
+  containerList.innerHTML = '';
+  const transactionsFiltered = transactions
+    .filter(el => filters.acc == '' || el.classList.contains(`acc--${filters.acc}`))
+    .filter(el => filters.mov == '' || el.classList.contains(`mov--${filters.mov}`))
+    .filter(el => filters.kind == '' || el.classList.contains(`kind--${filters.kind}`))
+    .filter(el => filters.currency == '' || el.classList.contains(`currency--${filters.currency}`));
+
+  transactionsFiltered.forEach(function (el) {
+    const html = el;
+    console.log(html);
+    containerList.innerHTML += el.outerHTML;
+  });
+
 
 }
