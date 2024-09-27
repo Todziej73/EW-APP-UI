@@ -43,7 +43,7 @@ html{
 }
 
 .formHeader{
-  font-size: 4rem;
+  font-size: 4.4rem;
   color: #099268;
   font-weight: 600;
   margin-bottom: 2.4rem;
@@ -61,18 +61,30 @@ html{
   margin-bottom: 0.4rem;
 }
 
-.inputEl input{
+.inputEl input, select{
   margin-bottom: 10px;
   padding: 0.8rem 1rem;
   font-size: 1.8rem;
   border-radius: 4px;
   background-color: #f3f3f3;
   border: none;
-  transition: 0.2s
+  transition: 0.2;
+  color: #333;
+}
+
+#fDate::-webkit-calendar-picker-indicator {
+  background-image: url(../img/calendar-blank.svg);
+  transform: scale(1.6);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#fDate::-webkit-calendar-picker-indicator:hover{
+  background-image: url(../img/calendar-dots.svg);
 }
 
 
-.inputEl input:focus{
+.inputEl input:focus, select:focus{
   outline: 1.5px solid #099268;
   box-shadow: 5px 5px 30px 10px rgba(136, 136, 136, 0.2);
 }
@@ -80,24 +92,35 @@ html{
 .BtnBox{
   display: flex;
   gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.subBtn, .cancelBtn{
+.subBtn, .closeBtn{
   text-align: center;
-  font-size: 1.8rem;
-  background-color: #3aa886;
+  font-size: 1.6rem;
+  letter-spacing: 1.2px;
   background-image: linear-gradient(to top left, #099268, #6bbea4);
   padding: 1.4rem 0;
   cursor: pointer;
   font-weight: 600;
-  width: 50%;
+  width: 35%;
+  height: 5rem;
   border-radius: 8px;
   border: none;
   color: #fff;
 }
 
 
-
-.cancelBtn:nth-child(2){
-  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+.closeBtn{
+  background-image: none;
+  background-color: #fff;
+  border: 3px solid #3aa886;
+  color: #3aa886;
 }
+
+
+.subBtn:focus, .closeBtn:focus{
+  outline: none;
+}
+

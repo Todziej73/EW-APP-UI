@@ -6,42 +6,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/mainStyles.css" type="text/css">
-  <link rel="stylesheet" href="css/form.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/generalStyles.css" type="text/css">
+  <link rel="stylesheet" href="css/form.css" type="text/css">
 </head>
 
 <body>
   <form class="formContainer">
-    <div class="formHeader">Nowa Inwestycja</div>
+    <div class="formHeader">Nowa Inwestycja
+    </div>
     <fieldset class="mainFieldBox">
       <div class="inputEl">
         <label for="fAccName">Nazwa Konta</label>
-        <input name="fAccName" id="fAccName" placeholder="" type="text">
+        <input name="fAccName" id="fAccName" placeholder="---" type="text">
       </div>
       <div class="inputEl">
         <label for="fDate">Data</label>
-        <input name="fDate" id="fDate" placeholder="" type="datetime">
+        <input name="fDate" id="fDate" placeholder="" type="date">
       </div>
       <div class="inputEl">
-        <label for="fPrice">Cena</label>
-        <input name="fPrice" id="fPrice" placeholder="" type="number">
+        <label for="fCurrency">Typ Transakcji</label>
+        <select name="fCurrency" id="fCurrency" placeholder="---" type="text">
+          <option value="sell">sprzedaż</option>
+          <option value="buy">zakup</option>
+        </select>
       </div>
       <div class="inputEl">
         <label for="fType">Instrument</label>
-        <input name="fType" id="fType" placeholder="" type="text">
+        <input name="fType" id="fType" placeholder="---" type="text">
       </div>
       <div class="inputEl">
-        <label for="fNumber">Instrument</label>
-        <input name="fNumber" id="fNumber" placeholder="" type="number">
+        <label for="fNumber">Liczba</label>
+        <input name="fNumber" id="fNumber" placeholder="---" type="number">
+      </div>
+      <div class="inputEl">
+        <label for="fPrice">Cena</label>
+        <input name="fPrice" id="fPrice" placeholder="---" type="number">
       </div>
       <div class="inputEl">
         <label for="fCurrency">Waluta</label>
-        <input name="fCurrency" id="fCurrency" placeholder="" type="number">
+        <select name="fCurrency" id="fCurrency" placeholder="---" type="text">
+          <option value="USD">USD</option>
+          <option value="GBP">GBP</option>
+          <option value="EUR">EUR</option>
+        </select>
       </div>
       <div class="BtnBox">
         <input class="subBtn btn" type="submit" value="Dodaj">
-        <div class="cancelBtn btn">Anuluj</div>
+        <button class="closeBtn btn">Anulluj</button>
       </div>
     </fieldset>
   </form>
