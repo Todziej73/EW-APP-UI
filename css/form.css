@@ -72,6 +72,16 @@ html{
   color: #333;
 }
 
+.inputEl select{
+  cursor: pointer;
+  background: url(../img/caret-down-bold.svg) no-repeat right white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 #fDate::-webkit-calendar-picker-indicator {
   background-image: url(../img/calendar-blank.svg);
   transform: scale(1.6);
