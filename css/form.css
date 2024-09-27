@@ -80,6 +80,7 @@ html{
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
+  background-color: #f3f3f3;
 }
 
 #fDate::-webkit-calendar-picker-indicator {
