@@ -1,0 +1,103 @@
+/* ?FORM?*/
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  background-color: #efefef;
+}
+
+
+.formContainer{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  background-color: #fff;
+  padding: 2.4rem 3.2rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 30px 15px rgba(136, 136, 136, 0.2);
+  transition: all 0.3s;
+}
+
+.formContainer:hover{
+  box-shadow: 5px 5px 40px 30px rgba(136, 136, 136, 0.2);
+}
+
+.mainFieldBox{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: none;
+  column-gap: 2.4rem;
+  row-gap: 2.4rem;
+}
+
+.formHeader{
+  font-size: 4rem;
+  color: #099268;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+}
+
+.inputEl{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.inputEl label{
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.inputEl input{
+  margin-bottom: 10px;
+  padding: 0.8rem 1rem;
+  font-size: 1.8rem;
+  border-radius: 4px;
+  background-color: #f3f3f3;
+  border: none;
+  transition: 0.2s
+}
+
+
+.inputEl input:focus{
+  outline: 1.5px solid #099268;
+  box-shadow: 5px 5px 30px 10px rgba(136, 136, 136, 0.2);
+}
+
+.BtnBox{
+  display: flex;
+  gap: 2rem;
+}
+
+.subBtn, .cancelBtn{
+  text-align: center;
+  font-size: 1.8rem;
+  background-color: #3aa886;
+  background-image: linear-gradient(to top left, #099268, #6bbea4);
+  padding: 1.4rem 0;
+  cursor: pointer;
+  font-weight: 600;
+  width: 50%;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+}
+
+
+
+.cancelBtn:nth-child(2){
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}

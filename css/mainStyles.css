@@ -1,0 +1,126 @@
+/*  
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+COLORS:
+
+MAIN:
+#099268
+#099268
+LIGHT:
+#3aa886
+DARK:
+#05583e
+BLACK:
+#01110c
+WHITE:
+#e7f6f2
+ */
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-family: "Poppinaa", sans-serif;
+  font-size: 62.5%;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+.hero-section{
+  display: flex;
+  align-items: center;
+  flex-direction: column;  
+  height: 100vh;
+  padding: 30rem 0 3.2rem 0;
+  background-size: cover;
+  color: #e7f6f2;
+  background-image: linear-gradient(rgba(20, 20, 20, 0.6), rgba(17, 17, 17, 0.6)), url(../img/zdjęcie\ w\ tle3.avif);
+  background-size: cover;
+}
+
+
+
+.hero-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3.2rem;
+}
+
+.hero-main-text{
+  font-size: 6.2rem;
+  font-weight: 600;
+}  
+
+.important-text{
+  background-image: linear-gradient(to right bottom, #6bbea4, #099268, #05583e);
+  text-shadow: #3aa886 0px 0px 10px;
+  background-clip: text;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+  animation: impTextAnim 3s linear  infinite;
+}
+/* @keyframes impTextAnim {
+  0% {text-shadow: #3aa886 0px 0px 2px;}
+  25% {text-shadow: #3aa886 0px 0px 8px;}
+  50% {text-shadow: #3aa886 0px 0px 10px;}
+  75% {text-shadow: #3aa886 0px 0px 8px;}
+  100% {text-shadow: #3aa886 0px 0px 2px;}
+  
+} */
+
+
+.hero-sub-text{
+  font-size: 2.4rem;
+
+
+}
+
+.start-now-btn{
+  font-size: 3rem;
+  margin-top: 3.2rem;
+  color: #fff;
+  background-image: linear-gradient(to right bottom, #6bbea4, #099268, #6bbea4);;
+  padding: 2rem 5.6rem;
+  border-radius: 2388px;
+  letter-spacing: 1.3px;
+  box-shadow: 5px 5px 30px 5px rgba(58, 168, 133, 0.5);
+  animation: startBtnAnim 10s linear  infinite ;
+  font-weight: 550;
+}
+
+
+
+ 
+
+.start-now-btn:hover{
+  box-shadow: 5px 5px 32px 12px rgba(58, 168, 133, 0.5);
+}
+
+.start-now-btn:active{
+  box-shadow: 5px 5px 35px 2px rgba(58, 168, 133, 0.5);
+}
+
+/* .start-now-btn:hover{
+  background-image: linear-gradient(to right bottom, #6bbea4, #099268, #077553);  padding: 2rem 5.6rem;
+
+} */
+
+
+.hero-img img{
+  width: 70rem;
+}
+
