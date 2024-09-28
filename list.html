@@ -12,6 +12,7 @@
 <body>
   <div class="listBody">
     <div class="mainRow">
+      <div class="openFilters">Filtruj</div>     
       <div class="type">Data</div>
       <div class="type">Nazwa Konta</div>
       <div class="type">Typ</div>
@@ -21,7 +22,8 @@
       <div class="type">Cena</div>
     </div>
     <div class="filterRow">
-      <div class="filterRowText">Filtruj:</div>
+      <div class="filterRowText"></div>
+      <div class="filterRowText"></div>
       <select class="selectAcc form-select" onchange="filter('selectAcc', 'acc')">
         <option value="all">Wszystkie Konta</option>
         <option value="acc1">Konto 1</option>
@@ -36,7 +38,7 @@
         <option value="buy">Zakup</option>
       </select>
       <select class="selectType form-select"  onchange="filter('selectType', 'kind')">
-        <option value="all">Wszystkie Instrumenty</option>
+        <option value="all">Wszystkie</option>
         <option value="stock">Akcje</option>
         <option value="bond">Obligacje</option>
         <option value="commodity">towar</option>
@@ -49,18 +51,9 @@
         <option value="eur">EUR</option>
         <option value="GBP"></option>
       </select>
+      <div class="resetBtn">Resetuj Filtry</div>
     </div>
-    <div class="list">
-      <!-- <div class="listEl type--stock">
-        <div class="data">Konto1</div>
-        <div class="data">26-08-2024</div>
-        <div class="data">Sprzedaż</div>
-        <div class="data">akcja</div>
-        <div class="data">20</div>
-        <div class="data">120</div>
-        <div class="data">USD</div>
-      </div> -->
-    </div>
+    <div class="list"></div>
   </div>
   
   <script src="list.js"></script>

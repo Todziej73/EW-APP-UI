@@ -30,7 +30,7 @@ WHITE:
 
 .mainRow, .listEl, .filterRow{
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   align-items: center;
   justify-items: center;
   padding: 2rem 3.6rem;
@@ -39,14 +39,29 @@ WHITE:
 
 /* FILTER ROW */
 .filterRow{
+  display: none;
+    acity: 0;
   border: 1px solid #bbb;
   border-top: none;
 }
 
+@keyframes showRow {
+  0% {opacity: 0;}
+  25% {opacity: 25;}
+  50% {opacity: 50;}
+  75% {opacity: 75;}
+  100% {opacity: 100}
+}
+
+
+
 .filterRow select{
-  width: 200px;
+  width: 18rem;
   font-size: 1.6rem;
   cursor: pointer;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+
 }
 
 .filterRow select:focus{
@@ -59,9 +74,31 @@ WHITE:
   font-size: 2rem;
 }
 
-.none{
-  display: none;
+.resetBtn{
+  width: 18rem;
+  text-align: center;
+  background-color: #099268;
+  color: #e7f6f2;
+  font-size: 1.8rem;
+  grid-column: 7;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 3px 3px 20px 8px rgba(136, 136, 136, 0.199);
+  transition: 0.2s;
 }
+
+.resetBtn:hover{
+  background-color: #099268;
+  color: #e7f6f2;
+  box-shadow: 3px 3px 25px 12px rgba(136, 136, 136, 0.3);
+}
+
+.resetBtn:active{
+  background-color: #08835e;
+  box-shadow: 3px 3px 15px 5px rgba(136, 136, 136, 0.3);
+}
+
 
 
 .mainRow{
@@ -113,13 +150,13 @@ WHITE:
 
 }
 
-.mov--sell div:nth-child(3), .mov--buy div:nth-child(3){
+.mov--sell div:nth-child(4), .mov--buy div:nth-child(4){
   background-image: linear-gradient(to top left, #3aa886, #9be15d);
   color: #fff;
   padding: 0.8rem 0.8rem;
   border-radius: 999px;
 }
 
-.mov--buy div:nth-child(3){
+.mov--buy div:nth-child(4){
   background-image: linear-gradient(to top left, #e52a5a, #ff585f);
 }
