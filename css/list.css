@@ -40,7 +40,6 @@ WHITE:
 /* FILTER ROW */
 .filterRow{
   display: none;
-    acity: 0;
   border: 1px solid #bbb;
   border-top: none;
 }
@@ -51,6 +50,19 @@ WHITE:
   50% {opacity: 50;}
   75% {opacity: 75;}
   100% {opacity: 100}
+}
+
+.openFilters img{
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.openFilters img:hover{
+  transform: scale(1.2);
+}
+
+.grid{
+  display: grid;
 }
 
 

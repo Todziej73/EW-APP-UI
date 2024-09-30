@@ -115,7 +115,6 @@ function refreshList() {
 
 }
 
-
 const filter = function (selectEl, type) {
   const currentValue = document.querySelector(`.${selectEl}`).value;
   filters[type] = currentValue == 'all' ? '' : currentValue;
@@ -123,6 +122,16 @@ const filter = function (selectEl, type) {
 
   refreshList();
 }
+
+
+
+
+openFilterBtn.addEventListener('click', function(){
+  console.log(1);
+  filterRow.classList.toggle('grid');
+  filterRow.style.animation = 'showRow 2s linear 1';
+  filterRow.style.opacity = '100';
+});
 
 resetFiltersBtn.addEventListener('click', function(){
   filters.clear();
