@@ -138,7 +138,7 @@ resetFiltersBtn.addEventListener('click', function(){
 openFilterBtn.addEventListener('click', function(){
   console.log(1);
   filterRow.style.display = 'grid';
-  filterRow.style.animation = 'showRow 2s linear 1';
+  filterRow.style.animation = 'showRow 2  s linear 1';
   filterRow.style.opacity = '100';
 });
 
