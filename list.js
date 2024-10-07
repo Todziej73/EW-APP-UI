@@ -92,6 +92,7 @@ let filters = {
 
 
 
+
 for(const el of document.querySelectorAll('.listEl')){
   transactions.push(el);
 }
@@ -121,6 +122,12 @@ const filter = function (selectEl, type) {
   console.log(filters);
 
   refreshList();
+}
+
+
+const sort = function(transactionsValues){
+ transactionsValues.sort()
+
 }
 
 

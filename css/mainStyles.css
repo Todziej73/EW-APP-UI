@@ -21,7 +21,6 @@ WHITE:
  */
 
 
-
 .hero-section{
   display: flex;
   align-items: center;
@@ -111,3 +110,99 @@ WHITE:
   width: 70rem;
 }
 
+/* main page */
+
+
+.mainPageContainer{
+  height: 100vh;
+  display: flex;
+}
+
+.sideBar{
+  display: flex;
+  flex-direction: column;
+  padding: 3.6rem 0;
+  height: 100vh;
+  width: 19%;
+  background-color: #099268;
+  color: #fff;
+  font-size: 1.8em;
+}
+
+.sideBarHeader{
+  font-size: 4rem;
+  margin-bottom: 4.8rem;
+  padding: 0 3.6rem;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  justify-content: center;
+}
+
+.subTittle{
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+
+.sideBarEl{
+  padding: 3.4rem 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  transition: 0.3s;
+  fill: #fff;
+  cursor: pointer;
+}
+
+svg{
+  transition: 0.3s;
+}
+
+.sideBarEl4 svg{
+  transition: 0.5s;
+}
+
+.sideBarEl:hover{
+  background-color: #08835e;
+
+  svg{
+    transform: scale(1.2);
+  }
+}
+
+
+
+
+.sideBarEl4:hover{
+  background-color: #08835e;
+
+  svg{
+    transform: rotate(180deg);
+  }
+}
+
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.topBar{
+  display: flex;
+  padding: 3.6rem;
+}
+
+.topBar h1{
+  font-size: 3.4rem;
+  font-weight: 700;
+}
+
+.concent{
+  width: 100%;
+  height: 100%;
+  background-color: #efefef;
+}
