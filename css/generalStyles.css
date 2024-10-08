@@ -42,3 +42,12 @@ body{
     display: none;
   }
   
+
+svg{
+  transition: 0.3s;
+
+}
+
+  svg:hover{
+    transform: scale(1.2);
+  }
