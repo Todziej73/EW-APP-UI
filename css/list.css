@@ -24,7 +24,6 @@ WHITE:
 .listBody{
   width: 100%;
   height: 100%;
-  padding: 8rem;
 }
 
 
@@ -40,8 +39,10 @@ WHITE:
 /* FILTER ROW */
 .filterRow{
   display: none;
+  align-items: center;
   border: 1px solid #bbb;
   border-top: none;
+
 }
 
 @keyframes showRow {
@@ -73,7 +74,7 @@ WHITE:
   cursor: pointer;
   padding: 1rem 1.2rem;
   border-radius: 8px;
-
+  margin-bottom: 0;
 }
 
 .filterRow select:focus{
@@ -117,14 +118,12 @@ WHITE:
   color: #e7f6f2;
   background-color: #099268;
   font-size: 2.2rem;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
 }
 
 
 .list{
   overflow-y: scroll;
-  height: 60rem;
+  height: calc(100vh - 100px);  
   scrollbar-gutter: stable;
 }
 

@@ -9,6 +9,7 @@ html{
   line-height: 1;
   font-weight: 400;
   color: #555;
+  overflow: hidden;
 }
 
 body{
@@ -16,7 +17,7 @@ body{
 }
 
 
-.btn, .btn:link, .btn:visited{
+.button, .button:link, .botton:visited{
   display: inline-block;
   transition: all 0.3s;
   cursor: pointer;
@@ -29,19 +30,16 @@ body{
   }
 
 
-  .btn:hover{
+  .button:hover{
     box-shadow: 3px 3px 25px 12px rgba(136, 136, 136, 0.3);
   }
 
-  .btn:active{
+  .button:active{
     box-shadow: 3px 3px 15px 5px rgba(136, 136, 136, 0.3);
   }
 
 
-  .none{
-    display: none;
-  }
-  
+ 
 
 svg{
   transition: 0.3s;

@@ -14,12 +14,16 @@
   />
 
   <link rel="stylesheet" href="css/generalStyles.css" type="text/css">
+  <link rel="stylesheet" href="css/form.css" type="text/css">
   <link rel="stylesheet" href="css/mainStyles.css" type="text/css">
+  <link rel="stylesheet" href="css/list.css" type="text/css">
+
 </head>
 <body>
     <main class="mainPageContainer">
-        <nav class="sideBar">
-            
+
+        <!-- !NAWIGAJCA -->
+        <nav class="sideBar">    
             <div class="sideBarHeader">
                 <div class="logo">EW</div>
                 <div class="subTittle">E-wallet App</div> 
@@ -45,42 +49,137 @@
                 Ustawienia
             </div>
         </nav>
-        <div class="container">
-            <div class="topBar">
-                <h1>Panel Głowny</h1>
-                <div class="accountIcon dropstart">
-                    <button class="btn accIconBtn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#099268" viewBox="0 0 256 256"><path d="M172,120a44,44,0,1,1-44-44A44.05,44.05,0,0,1,172,120Zm60,8A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88.09,88.09,0,0,0-91.47-87.93C77.43,41.89,39.87,81.12,40,128.25a87.65,87.65,0,0,0,22.24,58.16A79.71,79.71,0,0,1,84,165.1a4,4,0,0,1,4.83.32,59.83,59.83,0,0,0,78.28,0,4,4,0,0,1,4.83-.32,79.71,79.71,0,0,1,21.79,21.31A87.62,87.62,0,0,0,216,128Z"></path></svg>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Konto 1</a></li>
-                        <li><a class="dropdown-item" href="#">Konto 2</a></li>
-                        <li><a class="dropdown-item" href="#">Konto 3</a></li>
-                        <li><a class="dropdown-item" href="#">Konto 4</a></li>
-                        <li><a class="dropdown-item" href="#">Dodaj Konto</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="concent">
-                <div class="concentEl currentBalanceBox">
-                    <div class="concentSubText">Dostępne Środki:</div>
-                    <div class="concentText">12 000</div>
-                </div>
-                <div class="concentEl currentProftBox">
-                    <div class="concentSubText">Profit:</div>
-                    <div class="concentText">6000</div>
-                </div>
-                <div class="concentEl chart chart--2b3"></div>
-                <div class="concentEl chart chart--3b2"></div>
-                <div class="concentEl chart chart--3b2"></div>
+        <div class="pageContainer">
 
-
-                <!-- <div class="concentEl chart">
-                    <canvas id="myChart" ></canvas>
-                </div> -->
+        <!-- !PASEK GÓRNY -->
+        <div class="topBar">
+              <h1>Panel Główny</h1>
+               <div class="accountIcon dropstart">
+                   <button class="btn accIconBtn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#099268" viewBox="0 0 256 256"><path d="M172,120a44,44,0,1,1-44-44A44.05,44.05,0,0,1,172,120Zm60,8A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88.09,88.09,0,0,0-91.47-87.93C77.43,41.89,39.87,81.12,40,128.25a87.65,87.65,0,0,0,22.24,58.16A79.71,79.71,0,0,1,84,165.1a4,4,0,0,1,4.83.32,59.83,59.83,0,0,0,78.28,0,4,4,0,0,1,4.83-.32,79.71,79.71,0,0,1,21.79,21.31A87.62,87.62,0,0,0,216,128Z"></path></svg>
+                   </button>
+                   <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="#">Konto 1</a></li>
+                       <li><a class="dropdown-item" href="#">Konto 2</a></li>
+                       <li><a class="dropdown-item" href="#">Konto 3</a></li>
+                       <li><a class="dropdown-item" href="#">Konto 4</a></li>
+                       <li><a class="dropdown-item" href="#">Dodaj Konto</a></li>
+                   </ul>
+               </div>
+          </div>  
+        <!-- !GŁOWNY WIDOK -->
+        <div class="headPanel page1">
+            <div class="concentEl currentBalanceBox">
+                <div class="concentSubText">Dostępne Środki:</div>
+                <div class="concentText">12 000</div>
             </div>
+            <div class="concentEl currentProftBox">
+                   <div class="concentSubText">Profit:</div>
+                   <div class="concentText">6000</div>
+            </div>
+            <div class="concentEl chart chart--2b3"></div>
+            <div class="concentEl chart chart--3b2"></div>
+            <div class="concentEl chart chart--3b2"></div>
+        </div>
+
+        <!-- !FORMULARZ -->
+        <form class="formContainer closed page2">
+            <div class="formHeader">Nowa Inwestycja
+            </div>
+            <fieldset class="mainFieldBox">
+              <div class="inputEl">
+                <label for="fAccName">Nazwa Konta</label>
+                <input name="fAccName" id="fAccName" placeholder="---" type="text">
+              </div>
+              <div class="inputEl">
+                <label for="fDate">Data</label>
+                <input name="fDate" id="fDate" placeholder="" type="datetime-local">
+              </div>
+              <div class="inputEl">
+                <label for="fCurrency">Typ Transakcji</label>
+                <select name="fCurrency" id="fCurrency" placeholder="---" type="text">
+                  <option value="sell">sprzedaż</option>
+                  <option value="buy">zakup</option>
+                </select>
+              </div>
+              <div class="inputEl">
+                <label for="fType">Instrument</label>
+                <input name="fType" id="fType" placeholder="---" type="text">
+              </div>
+              <div class="inputEl">
+                <label for="fNumber">Liczba</label>
+                <input name="fNumber" id="fNumber" placeholder="---" type="number">
+              </div>
+              <div class="inputEl">
+                <label for="fPrice">Cena</label>
+                <input name="fPrice" id="fPrice" placeholder="---" type="number">
+              </div>
+              <div class="inputEl">
+                <label for="fCurrency">Waluta</label>
+                <select name="fCurrency" id="fCurrency" placeholder="---" type="text">
+                  <option value="USD">USD</option>
+                  <option value="GBP">GBP</option>
+                  <option value="EUR">EUR</option>
+                </select>
+              </div>
+              <div class="BtnBox">
+                <input class="subBtn button" type="submit" value="Dodaj">
+                <button class="closeBtn button">Anulluj</button>
+              </div>
+            </fieldset>
+          </form>
+
+          <!-- !LISTA -->
+          <div class="listBody closed page3">
+            <div class="mainRow">
+              <div class="openFilters">
+                <img src="img/sliders.svg" alt="">
+              </div>     
+              <div class="type">Data</div>
+              <div class="type">Nazwa Konta</div>
+              <div class="type">Typ</div>
+              <div class="type">Intrument</div>
+              <div class="type">Waluta</div>
+              <div class="type">Liczba</div>
+              <div class="type">Cena</div>
+            </div>
+            <div class="filterRow">
+              <div class="filterRowText"></div>
+              <div class="filterRowText"></div>
+              <select class="selectAcc form-select" onchange="filter('selectAcc', 'acc')">
+                <option value="all">Wszystkie Konta</option>
+                <option value="acc1">Konto 1</option>
+                <option value="acc2">Konto 2</option>
+                <option value="acc3">Konto 3</option>
+                <option value="acc4">Konto 4</option>
+                <option value="acc5">Konto 5</option>
+              </select>
+              <select class="selectMovType form-select"  onchange="filter('selectMovType', 'mov')">
+                <option value="all">Sprzedaż / Zakup</option>
+                <option value="sell">Sprzedaż</option>
+                <option value="buy">Zakup</option>
+              </select>
+              <select class="selectType form-select"  onchange="filter('selectType', 'kind')">
+                <option value="all">Wszystkie</option>
+                <option value="stock">Akcje</option>
+                <option value="bond">Obligacje</option>
+                <option value="commodity">towar</option>
+                <option value="realEstate">Nieruchomości</option>
+              </select>
+              <select class="selectCurrency form-select" onchange="filter('selectCurrency', 'currency')">
+                <option value="all">Wszystkie Waluty</option>
+                <option value="usd">USD</option>
+                <option value="pln">PLN</option>
+                <option value="eur">EUR</option>
+                <option value="GBP"></option>
+              </select>
+              <div class="resetBtn">Resetuj Filtry</div>
+            </div>
+            <div class="list"></div>
+          </div>
         </div>
     </main>
 </body>
-<script src="mainScript.js"></script>
+<script src="js/mainScript.js"></script>
+<script src="js/list.js"></script>
 </html>
