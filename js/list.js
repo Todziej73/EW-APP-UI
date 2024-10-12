@@ -4,11 +4,12 @@
 
 const containerList = document.querySelector('.list');
 const selectElArr = document.querySelectorAll('.filterRow select');
-const resetFiltersBtn = document.querySelector('.resetBtn');
+const resetFiltersBtn = document.querySelector('.resetFilterBtn');
 const openFilterBtn = document.querySelector('.openFilters');
 const filterRow = document.querySelector('.filterRow')
-let transactionCount = 1;
 
+let transactionCount = 1;
+let filtersOpen = false;
 const addTransaction = function (htmlType, htmlAcc, htmlMovType, htmlCurrency, accName, date, typeOfMov, type, count, price, currency) {
   const html = `
   <div class="listEl kind--${htmlType} acc--${htmlAcc} mov--${htmlMovType} currency--${htmlCurrency}">
@@ -134,9 +135,12 @@ const sort = function(transactionsValues){
 
 
 openFilterBtn.addEventListener('click', function(){
-  filterRow.classList.toggle('grid');
-  filterRow.style.animation = 'showRow 2s linear 1';
-  filterRow.style.opacity = '100';
+ if(filtersOpen === false){
+  filterRow.style.animation = 'showRow 0.5s forwards ';
+ }else{
+  filterRow.style.animation = 'hideRow 0.5s forwards ';
+ }
+ filtersOpen = !filtersOpen;
 });
 
 resetFiltersBtn.addEventListener('click', function(){

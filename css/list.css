@@ -24,6 +24,20 @@ WHITE:
 .listBody{
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
+  height: 0;
+  scrollbar-gutter: stable;
+  transition: height 1s;
+  animation: openList 1.5s forwards;
+}
+
+@keyframes openList {
+  from{
+    height: 0;
+  }
+  to{
+    height: calc(100vh - 10rem);
+  }
 }
 
 
@@ -38,7 +52,9 @@ WHITE:
 
 /* FILTER ROW */
 .filterRow{
-  display: none;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
   align-items: center;
   border: 1px solid #bbb;
   border-top: none;
@@ -46,12 +62,28 @@ WHITE:
 }
 
 @keyframes showRow {
-  0% {opacity: 0;}
-  25% {opacity: 25;}
-  50% {opacity: 50;}
-  75% {opacity: 75;}
-  100% {opacity: 100}
+ from{
+  display: none;
+  height: 0;
+ }
+ to{
+  display: grid;
+  height: 10rem;
+ }
 }
+
+@keyframes hideRow {
+  from{
+   display: grid;
+   height: 8rem;
+  }
+ }
+ 
+  to{
+   display: none;
+   height: 0;
+  }
+
 
 .openFilters img{
   cursor: pointer;
@@ -62,15 +94,10 @@ WHITE:
   transform: scale(1.2);
 }
 
-.grid{
-  display: grid;
-}
 
 
 
 .filterRow select{
-  width: 18rem;
-  font-size: 1.6rem;
   cursor: pointer;
   padding: 1rem 1.2rem;
   border-radius: 8px;
@@ -82,28 +109,31 @@ WHITE:
   border: 1px solid #099268;
 }
 
-
 .filterRowText{
   font-size: 2rem;
 }
 
-.resetBtn{
+.filterRow select, .resetFilterBtn{
   width: 18rem;
-  text-align: center;
-  background-color: #099268;
-  color: #e7f6f2;
-  font-size: 1.8rem;
-  grid-column: 7;
-  padding: 1rem 1.2rem;
+  color: #333;
+  font-size: 1.6rem;
+ padding: 1rem 1.2rem;
   border-radius: 8px;
-  cursor: pointer;
+ cursor: pointer;
+}
+
+.resetFilterBtn{
+  background-color: #099268;
+  text-align: center;
+  color: #efefef;
+  grid-column: 7;
   box-shadow: 3px 3px 20px 8px rgba(136, 136, 136, 0.199);
   transition: 0.2s;
 }
 
 .resetBtn:hover{
   background-color: #099268;
-  color: #e7f6f2;
+  color: #efefef;
   box-shadow: 3px 3px 25px 12px rgba(136, 136, 136, 0.3);
 }
 
@@ -122,33 +152,14 @@ WHITE:
 
 
 .list{
-  overflow-y: scroll;
-  height: calc(100vh - 100px);  
-  scrollbar-gutter: stable;
-}
 
-.list::-webkit-scrollbar{
-  display: none;
 }
-/* 
-.list:hover::-webkit-scrollbar{
-  display: block;
-  background: none;
-  scrollbar-gutter: stable;
-}
-
-.list::-webkit-scrollbar-thumb{
-  background-color: #099268;
-} */
 
 .type, .data{
   text-align: center;
 }
 
-.listEl:last-child{
-  border-bottom-left-radius: 14px;
-  border-bottom-right-radius: 14px;
-}
+
 
 
 .listEl{
