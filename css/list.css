@@ -99,9 +99,10 @@ WHITE:
 
 .filterRow select{
   cursor: pointer;
-  padding: 1rem 1.2rem;
   border-radius: 8px;
   margin-bottom: 0;
+  border: 1px solid #bbb;
+  transition: 0.3s;
 }
 
 .filterRow select:focus{

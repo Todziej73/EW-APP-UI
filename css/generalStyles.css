@@ -1,22 +1,21 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-html{
+html {
   font-size: 62.5%;
-  line-height: 1;
   font-weight: 400;
   color: #555;
 }
 
-body{
-  font-family: "Poppins", sans-serif;
+body {
 }
 
 
-.overlay{
+.overlay {
   position: absolute;
   display: none;
   top: 0;
@@ -29,14 +28,21 @@ body{
 }
 
 
-h3{
+h3 {
   font-size: 3rem;
-  margin: 0;
-  padding: 0;
+  
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
 
-.button, .button:link, .button:visited{
+/* ! PRZYCISKI */
+.button,
+.button:link,
+.button:visited {
   display: inline-block;
   transition: all 0.3s;
   cursor: pointer;
@@ -46,42 +52,68 @@ h3{
   border: none;
   box-shadow: 3px 3px 20px 8px rgba(136, 136, 136, 0.199);
   transition: 0.25s;
-  }
+}
 
 
-  .button:hover{
-    box-shadow: 3px 3px 25px 12px rgba(136, 136, 136, 0.3);
-  }
+.button:hover {
+  box-shadow: 3px 3px 25px 12px rgba(136, 136, 136, 0.3);
+}
 
-  .button:active{
-    box-shadow: 3px 3px 15px 5px rgba(136, 136, 136, 0.3);
-  }
+.button:active {
+  box-shadow: 3px 3px 15px 5px rgba(136, 136, 136, 0.3);
+}
 
 
- 
+/* ! FORMULARZE */
 
-svg{
+input,
+select {
+  /* margin-bottom: 1rem; */
+  padding: 0.8rem 1rem;
+  font-size: 1.8rem;
+  border-radius: 4px;
+  background-color: #f3f3f3;
+  border: none;
+  transition: 0.2;
+  color: #333;
+}
+
+select {
+  cursor: pointer;
+  background: url(../img/caret-down-bold.svg) no-repeat right #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f3f3f3;
+}
+
+input:focus,
+select:focus {
+  outline: 1.5px solid #099268;
+  box-shadow: 5px 5px 30px 10px rgba(136, 136, 136, 0.2);
+}
+
+label{
+  font-size: 1.4rem;
+}
+
+svg {
   transition: 0.3s;
 
 }
 
-  svg:hover{
-    transform: scale(1.2);
-
-  }
- 
-
-.tab{
+.tab {
   display: none;
 }
 
-.open{
-  display: block;
-}
 
-.grid{
+
+.grid {
   display: grid;
 }
+
 
 
 /* 

@@ -2,36 +2,45 @@
 
 
 //* PAGES
-
-// const headPanel = document.querySelector('.page1');
-// const transactionList = document.querySelector('.page2');
-// const form = document.querySelector('.page3');
 const tabsArr = Array.from(document.querySelectorAll('.tab'));
 
 //* ELEMENTS
 const pageTitle = document.querySelector('.topBar h1');
+
+//acc window
+const addAccWindow = document.querySelector('.addAccWindow');
+const overlay = document.querySelector('.overlay');
+const openAccWindowBtn = document.querySelector('.openAccWindowBtn');
+const closeAccWindowBtn = document.querySelector('.closeWindowBtn');
+const colorSelector = document.querySelector('.ColorSelect');
+const addAccBtn = document.querySelector('.addAccBtn');
+
+//sideBar
+const sideBarBtns = document.querySelectorAll('.sideBarEl');
+
+//dropDown accounts
+const dropDownAcc = document.querySelector('.accountContainer');
+const acclist = document.querySelector('.accounts');
 
 //*BUTTONS
 const navBarElements = Array.from(document.querySelectorAll('.sideBarEl'));
 const [openHeadPanelBtn, openFormBtn, openListBtn] = [...navBarElements]
 
 
+//* OPENING / CLOSING TABS
 
-
-
-//* OTWIERANIE / ZMIANA ZAKŁADKI
-
-navBarElements.forEach(function(el, i){
+navBarElements.forEach(function (el, i) {
   el.setAttribute('onclick', `openTab(${i+1})`)
 });
 
-const openTab = function(tabNr){
+const openTab = function (tabNr) {
   tabsArr.forEach(el => el.classList.remove('open'));
+  sideBarBtns.forEach(el => el.classList.remove('active'));
 
-  if(tabNr <= tabsArr.length && !tabsArr[tabNr - 1].classList.contains('open')){
-      tabsArr[tabNr - 1].classList.add('open');
-
-    switch(tabNr){
+  if (tabNr <= tabsArr.length && !tabsArr[tabNr - 1].classList.contains('open')) {
+    tabsArr[tabNr - 1].classList.add('open');
+    sideBarBtns[tabNr - 1].classList.add('active');
+    switch (tabNr) {
       case 1:
         pageTitle.textContent = 'Panel Główny';
         break;
@@ -40,18 +49,79 @@ const openTab = function(tabNr){
         break;
       case 3:
         pageTitle.textContent = 'Transakcje';
-        // document.querySelector('.listBody').style.animation = 'openList 1.5s forwards';
         break;
     }
-    
+
   }
 }
 
 
-//* DODAWANIE KONTA
+//* OPENING DROPDOWN MENU  - ACCOUNTS
+
+const toggleAccDropDown = function(){
+  acclist.classList.toggle('flex');
+}
+
+dropDownAcc.addEventListener('click', function(){
+  toggleAccDropDown();
+});
 
 
 
 
+
+//* OPENING ACC WINDOW 
+
+//HANDELING COLORS
+
+const updateAccColor = function () {
+  switch (colorSelector.value) {
+    case 'red':
+      addAccBtn.style.backgroundColor = '#fa5252';
+      break;
+    case 'green':
+      addAccBtn.style.backgroundColor = '#099268';
+      break;
+    case 'purple':
+      addAccBtn.style.backgroundColor = '#be4bdb';
+      break;
+    case 'blue':
+      addAccBtn.style.backgroundColor = '#228be6';
+      break;
+  }
+}
+
+
+
+const openAccWindow = function () {
+  addAccWindow.style.animationName = 'appear';
+  addAccWindow.classList.add('open');
+  overlay.classList.add('open');
+
+  colorSelector.selectedIndex = 0;
+  updateAccColor();
+}
+
+const closeAccWindow = function () {
+  addAccWindow.style.animationName = 'vanish';
+
+  setTimeout(() => {
+    addAccWindow.classList.remove('open');
+    overlay.classList.remove('open');
+  }, 1000);
+}
+
+// OPENING WINDOW
+openAccWindowBtn.addEventListener('click', openAccWindow)
+
+//CLOSING WINDOW
+closeAccWindowBtn.addEventListener('click', closeAccWindow);
+overlay.addEventListener('click', closeAccWindow)
+
+document.addEventListener('keydown', function (e) {
+  if (e.key == 'Escape' && addAccWindow.classList.contains('open')) {
+    closeAccWindow();
+  }
+});
 
 
