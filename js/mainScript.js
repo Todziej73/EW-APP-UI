@@ -1,10 +1,10 @@
 // ! ELEMENTS
 
+//* ELEMENTS
 
-//* PAGES
+// Tabs
 const tabsArr = Array.from(document.querySelectorAll('.tab'));
 
-//* ELEMENTS
 const pageTitle = document.querySelector('.topBar h1');
 
 //acc window
@@ -22,7 +22,7 @@ const sideBarBtns = document.querySelectorAll('.sideBarEl');
 const dropDownAcc = document.querySelector('.accountContainer');
 const acclist = document.querySelector('.accounts');
 
-//*BUTTONS
+//Buttons
 const navBarElements = Array.from(document.querySelectorAll('.sideBarEl'));
 const [openHeadPanelBtn, openFormBtn, openListBtn] = [...navBarElements]
 
@@ -49,6 +49,12 @@ const openTab = function (tabNr) {
         break;
       case 3:
         pageTitle.textContent = 'Transakcje';
+        break;
+      case 4:
+        pageTitle.textContent = 'Podsumowanie';
+        break;
+      case 5:
+        pageTitle.textContent = 'Ustawienia';
         break;
     }
 
