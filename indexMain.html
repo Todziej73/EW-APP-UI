@@ -17,7 +17,7 @@
 </head>
 <body>
     <main class="mainPageContainer">
-        <!-- !NAWIGAJCA -->
+        <!-- !NAVIGATION -->
       <nav class="sideBar">    
             <div class="sideBarHeader">
                 <div class="logo">EW</div>
@@ -46,7 +46,7 @@
       </nav>
       
       <div class="pageContainer">
-        <!-- !PASEK GÓRNY -->
+        <!-- !TOP BAR -->
         <div class="topBar">
               <h1>Panel Główny</h1>
                <div class="accountContainer">
@@ -61,9 +61,9 @@
                     <div class="dropdownItem openAccWindowBtn" href="#">Dodaj Konto</div></li>
                   </div>
                 </div>
-          </div>  
+        </div>  
 
-        <!-- !GŁOWNY WIDOK -->
+        <!-- !MAIN VIEW -->
         <div class="headPanelBlock open tab">
         <div class="headPanel">
             <div class="concentEl currentBalanceBox">
@@ -83,10 +83,11 @@
             <div class="concentEl chart chart--3b2">
               <canvas class="myChart" id="barChart2"></canvas>
             </div>
+           
         </div>
         </div>
 
-        <!-- !FORMULARZ -->
+        <!-- !FORM -->
         <form class="formContainer tab">
             <div class="formHeader">Nowa Inwestycja</div>
             <fieldset class="mainFieldBox">
@@ -132,8 +133,8 @@
             </fieldset>
         </form>
 
-          <!-- !LISTA -->
-          <div class="listBody tab">
+          <!-- !LIST -->
+        <div class="listBody tab">
             <div class="mainRow">
               <div class="openFilters">
                 <img src="img/sliders.svg" alt="">
@@ -178,7 +179,12 @@
               <div class="resetFilterBtn button">Resetuj Filtry</div>
             </div>
             <div class="list"></div>
-          </div>
+        </div>
+
+        <div class="summary tab"></div>
+          <!-- !SETTINGS -->
+        <div class="settings tab">
+        </div>
       </div>
 
         <!-- !OKNO DODAWANIA KONTA -->
@@ -204,6 +210,8 @@
             <input class="addAccBtn button" type="submit" value="dodaj">
           </form>
          </div>
+
+        
     </main>
     <div class="overlay"></div>
 
