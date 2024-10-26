@@ -44,7 +44,7 @@ WHITE:
 .mainRow, .listEl, .filterRow{
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  align-items: center;
+  align-content: center;
   justify-items: center;
   padding: 2rem 3.6rem;
 
