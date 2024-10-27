@@ -2,40 +2,21 @@
 
 
 .formContainer{
-  width: 70%;
-  background-color: #fff;
   padding: 2.4rem 3.2rem;
   border-radius: 10px;
-  box-shadow: 5px 5px 30px 15px rgba(136, 136, 136, 0.2);
   transition: all 0.3s;
-  animation: openForm 1.5s forwards;
-  overflow: hidden;
+  animation: openForm 1.5s forwards ease;
 }
 
 
-/* @keyframes openForm {
- 0%{
-  width: 0%;
-  height: 0%;
- }
-
- 25%{
-  width: 30%;
- }
-
- 50%{
-  height: 25%;
- }
-
- 75%{
-  
- }
-
- 100%{
-  width: 70%;
-  height: auto;
- }
-} */
+@keyframes openForm {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
 
 
 
@@ -50,18 +31,24 @@
 }
 
 @media (max-width: 87em) {
+  .mainPageContainer{
+    height: 100dvh;
+  }
+  .formContainer{
+    top: 60% !important;
+  }
   .mainFieldBox{
     grid-template-columns: 1fr;
   }  
 }
 
 
-.formHeader{
+/* .formHeader{
   font-size: 4.4rem;
   color: #099268;
   font-weight: 600;
   margin-bottom: 2.4rem;
-}
+} */
 
 .inputEl{
   display: flex;
